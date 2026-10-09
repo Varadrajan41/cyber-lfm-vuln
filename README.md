@@ -20,7 +20,6 @@ Fine-tune [LiquidAI/LFM2.5-1.2B-Instruct](https://huggingface.co/LiquidAI/LFM2.5
 
 - **Model (LoRA adapter)**: [Varadrajan/LFM2.5-1.2B-CyberVuln](https://huggingface.co/Varadrajan/LFM2.5-1.2B-CyberVuln)
 - **Dataset**: [Varadrajan/cve-vuln-assessment](https://huggingface.co/datasets/Varadrajan/cve-vuln-assessment)
-- **W&B training runs**: [cyber-lfm-vuln project](https://wandb.ai/varadrajan123-genzeon/cyber-lfm-vuln)
 - **Base model**: [LiquidAI/LFM2.5-1.2B-Instruct](https://huggingface.co/LiquidAI/LFM2.5-1.2B-Instruct)
 - **Source dataset**: [xamxte/cve-to-cwe](https://huggingface.co/datasets/xamxte/cve-to-cwe)
 - **Benchmark**: [CTIBench (NeurIPS 2024)](https://arxiv.org/abs/2406.07599)
