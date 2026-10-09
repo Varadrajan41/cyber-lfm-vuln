@@ -1,0 +1,24 @@
+{
+  "dataset": "xamxte/cve-to-cwe + NVD CVSS",
+  "seed": 3407,
+  "max_seq_length": 1024,
+  "require_cvss": true,
+  "rows_scanned": 69465,
+  "kept": {
+    "val": 2000,
+    "train": 50000
+  },
+  "dropped": {
+    "no_cvss": 17058,
+    "ctibench_mcqa_overlap": 68,
+    "too_long": 334,
+    "ctibench_cve_overlap": 5
+  },
+  "tokens_per_example": {
+    "min": 97,
+    "median": 155,
+    "p95": 275,
+    "max": 1024,
+    "total_tokens": 8984161
+  }
+}

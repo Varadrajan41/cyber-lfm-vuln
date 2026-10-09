@@ -1,0 +1,23 @@
+# Model weights (hosted on HuggingFace)
+models/*/adapter/adapter_model.safetensors
+models/*/adapter/tokenizer.json
+models/*/checkpoints/
+
+# Training data (hosted on HuggingFace)
+data/processed/*.jsonl
+data/processed-50k/*.jsonl
+data/nvd_cache/
+
+# Unsloth compiled cache
+unsloth_compiled_cache/
+
+# Wandb logs (hosted on wandb.ai)
+wandb/
+
+# Training logs (large)
+logs/*.log
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

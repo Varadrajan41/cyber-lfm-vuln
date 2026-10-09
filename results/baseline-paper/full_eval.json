@@ -1,0 +1,72 @@
+{
+  "model": "LiquidAI/LFM2.5-1.2B-Instruct",
+  "adapter": null,
+  "decoding": "greedy, repetition_penalty=1.05",
+  "ctibench_rcm": {
+    "accuracy": 0.18,
+    "accuracy_95ci": [
+      0.1574,
+      0.205
+    ],
+    "accuracy_hierarchy_aware": 0.184,
+    "macro_f1": 0.0118,
+    "unparsed": 110,
+    "n": 1000,
+    "minutes": 5.4
+  },
+  "ctibench_rcm_per_class_top10": {
+    "CWE-79": 0.755,
+    "CWE-89": 0.071,
+    "CWE-787": 0.0,
+    "CWE-352": 0.0,
+    "CWE-434": 0.0,
+    "CWE-416": 0.0,
+    "CWE-78": 0.0,
+    "CWE-22": 0.0,
+    "CWE-862": 0.0,
+    "CWE-125": 0.0
+  },
+  "ctibench_rcm_2021": {
+    "accuracy": 0.201,
+    "accuracy_95ci": [
+      0.1773,
+      0.227
+    ],
+    "accuracy_hierarchy_aware": 0.201,
+    "macro_f1": 0.0269,
+    "unparsed": 86,
+    "n": 1000,
+    "minutes": 4.9
+  },
+  "ctibench_rcm_2021_per_class_top10": {
+    "CWE-79": 0.868,
+    "CWE-787": 0.0,
+    "CWE-125": 0.018,
+    "CWE-20": 0.042,
+    "CWE-89": 0.043,
+    "CWE-22": 0.0,
+    "CWE-416": 0.0,
+    "CWE-120": 0.0,
+    "CWE-434": 0.042,
+    "CWE-352": 0.0
+  },
+  "ctibench_vsp": {
+    "vsp_score": 0.0019,
+    "mad": 9.9813,
+    "exact_vector_match": 0,
+    "exact_vector_match_pct": 0.0,
+    "unparsed": 998,
+    "n": 1000,
+    "minutes": 7.5
+  },
+  "ctibench_vsp_per_metric": {
+    "AV": 1.0,
+    "AC": 0.0,
+    "PR": 0.5,
+    "UI": 1.0,
+    "S": 0.0,
+    "C": 1.0,
+    "I": 1.0,
+    "A": 1.0
+  }
+}
