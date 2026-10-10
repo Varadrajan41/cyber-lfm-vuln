@@ -100,7 +100,7 @@ results/
 │   └── full_eval.json   # All metrics
 ├── baseline-paper/      # Base model eval results
 │   └── full_eval.json
-├── ifeval-vuln-full/    # IFEval run (lm-eval results + per-prompt samples)
+├── ifeval-vuln-full/    # IFEval run (lm-eval results JSON)
 └── ifeval_summary.json  # IFEval base vs fine-tuned comparison
 
 models/
