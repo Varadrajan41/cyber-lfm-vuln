@@ -68,6 +68,19 @@ A LoRA adapter that turns [LiquidAI/LFM2.5-1.2B-Instruct](https://huggingface.co
 | ATT&CK | Precision | 83.5% |
 | ATT&CK | Recall | 83.5% |
 
+### General Instruction Following (IFEval)
+
+Checks whether domain fine-tuning eroded the base model's general instruction following (lm-evaluation-harness, 541 prompts, 0-shot, chat template applied).
+
+| Metric | Base LFM2.5-1.2B | This model | Δ |
+|--------|------------------|------------|---|
+| Prompt-level strict | 83.4% | 81.0% | −2.4 |
+| Prompt-level loose | 84.8% | 82.6% | −2.2 |
+| Instruction-level strict | 87.8% | 86.6% | −1.2 |
+| Instruction-level loose | 89.3% | 87.8% | −1.6 |
+
+The drop is within ~1 standard error (±1.7 pts). None of the 541 responses fell back to the trained `CWE: / CVSS: / ATT&CK:` format — on non-assessment prompts the model behaves like a general assistant.
+
 ## Usage
 
 ```python
@@ -160,6 +173,8 @@ The base model is a **hybrid SSM+attention architecture** (Liquid Foundation Mod
 - CVSS vectors trained from NVD labels which may not match vendor assessments
 - ATT&CK technique mappings are AI-generated (via Claude Sonnet 4.6 in the source dataset)
 - English CVE descriptions only
+- Trained on a single prompt template with no system prompt and short inputs (≤1024 tokens); best results come from using the exact prompt shown in Usage
+- Not evaluated in RAG settings — whether the model grounds its answer in retrieved context (rather than memorized patterns) is untested
 - Outputs are advisory — validate against NVD/MITRE before operational use
 
 ## Citation

@@ -1,0 +1,32 @@
+{
+  "benchmark": "IFEval (lm-evaluation-harness 0.4.13, 541 prompts, 0-shot, --apply_chat_template, bf16, batch_size 8)",
+  "base": {
+    "model": "LiquidAI/LFM2.5-1.2B-Instruct",
+    "prompt_level_strict_acc": 0.8336,
+    "prompt_level_strict_acc_stderr": 0.0160,
+    "prompt_level_loose_acc": 0.8484,
+    "prompt_level_loose_acc_stderr": 0.0154,
+    "inst_level_strict_acc": 0.8777,
+    "inst_level_loose_acc": 0.8933
+  },
+  "vuln-full": {
+    "model": "LiquidAI/LFM2.5-1.2B-Instruct + models/vuln-full/adapter (50k)",
+    "prompt_level_strict_acc": 0.8096,
+    "prompt_level_strict_acc_stderr": 0.0169,
+    "prompt_level_loose_acc": 0.8262,
+    "prompt_level_loose_acc_stderr": 0.0163,
+    "inst_level_strict_acc": 0.8657,
+    "inst_level_loose_acc": 0.8777
+  },
+  "delta_points": {
+    "prompt_level_strict_acc": -2.4,
+    "prompt_level_loose_acc": -2.2,
+    "inst_level_strict_acc": -1.2,
+    "inst_level_loose_acc": -1.6
+  },
+  "format_leakage": {
+    "description": "IFEval responses containing the trained 'CWE: / CVSS: / ATT&CK:' output format",
+    "count": 0,
+    "total": 541
+  }
+}

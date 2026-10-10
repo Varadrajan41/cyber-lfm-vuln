@@ -21,3 +21,6 @@ logs/*.log
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# lm-eval per-prompt samples (large, regenerable with --log_samples)
+results/**/samples_*.jsonl

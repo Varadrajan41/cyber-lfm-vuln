@@ -14,7 +14,8 @@ Fine-tune [LiquidAI/LFM2.5-1.2B-Instruct](https://huggingface.co/LiquidAI/LFM2.5
 | Base LFM2.5-1.2B (no FT) | 1.2B | 18.0% | 20.1% |
 
 **CVSS vector prediction**: 0.897 VSP score, 41.8% exact vector match, 0 unparsed outputs.  
-**ATT&CK techniques**: 83.5% precision, 83.5% recall on held-out data.
+**ATT&CK techniques**: 83.5% precision, 83.5% recall on held-out data.  
+**General instruction following (IFEval)**: 81.0% prompt-level strict vs 83.4% for the base model (−2.4 pts, within ~1 SE); 0/541 responses fell back to the trained output format.
 
 ## Links
 
@@ -74,6 +75,12 @@ python scripts/eval_full.py --adapter models/vuln-full/adapter --run-name vuln-f
 
 # 5. Baseline comparison
 python scripts/eval_full.py --run-name baseline-paper --skip-multioutput
+
+# 6. General instruction following (separate env with lm-eval[ifeval])
+lm_eval --model hf \
+  --model_args pretrained=LiquidAI/LFM2.5-1.2B-Instruct,peft=models/vuln-full/adapter,dtype=bfloat16 \
+  --tasks ifeval --apply_chat_template --batch_size 8 --log_samples \
+  --output_path results/ifeval-vuln-full
 ```
 
 ## Project Structure
@@ -91,8 +98,10 @@ scripts/
 results/
 ├── vuln-full-paper/     # Fine-tuned model eval results
 │   └── full_eval.json   # All metrics
-└── baseline-paper/      # Base model eval results
-    └── full_eval.json
+├── baseline-paper/      # Base model eval results
+│   └── full_eval.json
+├── ifeval-vuln-full/    # IFEval run (lm-eval results + per-prompt samples)
+└── ifeval_summary.json  # IFEval base vs fine-tuned comparison
 
 models/
 └── vuln-full/
